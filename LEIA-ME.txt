@@ -1,0 +1,27 @@
+CONVERSOR DE QUADROS DE HORÁRIOS — UNIVASSOURAS
+
+1. Abra o arquivo index.html no navegador (Chrome, Edge ou Firefox).
+2. É necessária conexão à internet para carregar as bibliotecas de leitura e exportação (CDN).
+3. Selecione um DOCX com tabelas de horários ou PDF com texto selecionável.
+4. Confira unidade, curso, semestre e versão.
+5. Revise os registros, ajuste campos na tabela, consulte a aba Conferência.
+6. Opcional: na aba Alterações, importe um XLSX anterior do mesmo curso/unidade/semestre para comparar.
+7. Clique em Exportar Excel (.xlsx).
+
+HOSPEDAR NO GITHUB PAGES
+- Envie index.html para o repositório (raiz).
+- Acesse Settings > Pages > Deploy from a branch, selecione main / (root), e salve.
+- O processamento ocorre no navegador; não há servidor/banco de dados.
+
+LIMITAÇÕES E REGRAS
+- PDFs escaneados (sem texto) exigem OCR, não incluído.
+- PDFs podem ter células e colunas mal posicionadas, exigindo conferência manual.
+- Arquivos .doc precisam ser salvos como .docx antes da importação.
+- Formatos variados podem exigir ajuste do algoritmo de extração.
+- Os arquivos de saída seguem o modelo de 13 colunas: Curso | Turma | Dia | Início | Término | Disciplina | Modalidade | CH TOTVS | Composição Salarial | CH Paga | Nº alunos | Professor | Matrícula.
+- Composição Salarial, CH Paga e Nº alunos ficam vazios inicialmente, mas aceitam preenchimento manual na interface e são preservados na exportação.
+- Turma Única é convertida para Turma A. Modalidades normalizadas: Presencial, Remoto, EAD.
+- CH TOTVS usa tempos explicitamente indicados; caso contrário, créditos ou equivalências 15h->1, 30h->2, 60h->4.
+- Registros com contratação pendente são mantidos. Disciplinas compartilhadas são registradas em cada turma.
+- A identificação automática do curso/unidade pode falhar em certos documentos: corrija nos campos antes de exportar.
+- As bibliotecas são carregadas via CDN (Mammoth.js, PDF.js, SheetJS e ExcelJS).
